@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>La Spesa da Isa</title>
+
+<style>
+
+/* BODY */
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#6fd48e;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    border-bottom:3px solid black;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.logo img{
+    width:80px;
+}
+
+.logo h1{
+    font-size:32px;
+    color:#000;
+}
+
+/* STELLE */
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.stella{
+    width:110px;
+    height:110px;
+    background:#1e8e3e;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:13px;
+    padding:10px;
+}
+
+/* BOX CENTRALE */
+.hero{
+    width:90%;
+    height:300px;
+    margin:30px auto;
+    border:3px solid black;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* SEZIONE PRODOTTI / SERVIZI */
+.container{
+    display:flex;
+    width:90%;
+    margin:40px auto;
+    border:3px solid black;
+    border-radius:20px;
+}
+
+.box{
+    flex:1;
+    padding:30px;
+}
+
+.box:first-child{
+    border-right:3px solid black;
+}
+
+.box h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* BOTTONI */
+.btn{
+    padding:15px 20px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    margin:10px;
+}
+
+.verde{
+    background:#1e8e3e;
+}
+
+.rosso{
+    background:#e53935;
+}
+
+.bottoni-verdi,
+.bottoni-rossi{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* CHI SIAMO + CONTATTI */
+.info{
+    display:flex;
+    width:90%;
+    margin:40px auto;
+    border-top:3px solid black;
+    border-bottom:3px solid black;
+    padding:40px 0;
+}
+
+.info div{
+    flex:1;
+    padding:20px;
+}
+
+.info div:first-child{
+    border-right:3px solid black;
+}
+
+.info h3{
+    color:red;
+}
+
+/* ORARI */
+.orari{
+    width:90%;
+    margin:40px auto;
+    border-top:3px solid black;
+    padding-top:30px;
+    text-align:center;
+}
+
+.giorni{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.giorni div{
+    margin:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="INCOLLA_QUI_IL_LINK_DEL_LOGO" alt="Logo">
+        <h1>LA SPESA DA ISA</h1>
+    </div>
+
+    <div class="menu">
+        <div class="stella">CHI SIAMO</div>
+        <div class="stella">PRODOTTI</div>
+        <div class="stella">MONEY</div>
+        <div class="stella">SERVIZI</div>
+    </div>
+</header>
+
+<div class="hero">
+    <img src="INCOLLA_QUI_IL_LINK_DELL_IMMAGINE" alt="Immagine negozio">
+</div>
+
+<section class="container">
+    
+    <div class="box">
+        <h2>PRODOTTI</h2>
+        <div class="bottoni-verdi">
+            <div class="btn verde">ALIMENTARI</div>
+            <div class="btn verde">GASTRONOMIA</div>
+            <div class="btn verde">FRUTTA VERDURA</div>
+            <div class="btn verde">CASA</div>
+            <div class="btn verde">CANCELLERIA</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>SERVIZI</h2>
+        <div class="bottoni-rossi">
+            <div class="btn rosso">SPESA A DOMICILIO</div>
+            <div class="btn rosso">OFFERTE</div>
+            <div class="btn rosso">CARTA FEDELTA'</div>
+            <div class="btn rosso">MONEY</div>
+        </div>
+    </div>
+
+</section>
+
+<section class="info">
+    <div>
+        <h3>CHI SIAMO</h3>
+        <p>La Spesa da Isa è il mini market di quartiere dove qualità, convenienza e cortesia vanno sempre di pari passo.</p>
+    </div>
+
+    <div>
+        <h3>CONTATTI</h3>
+        <p><strong>333 247 2741</strong></p>
+    </div>
+</section>
+
+<section class="orari">
+    <h3>ORARI DI APERTURA</h3>
+    <div class="giorni">
+        <div>MERCOLEDÌ<br>07:30–12:30, 15:30–19:30</div>
+        <div>GIOVEDÌ<br>07:30–12:30, 15:30–19:30</div>
+        <div>VENERDÌ<br>07:30–12:30, 15:30–19:30</div>
+        <div>SABATO<br>07:30–12:30, 15:30–19:30</div>
+        <div>LUNEDÌ<br>07:30–12:30</div>
+        <div>MARTEDÌ<br>07:30–12:30, 15:30–19:30</div>
+        <div>DOMENICA CHIUSO</div>
+    </div>
+</section>
+
+</body>
+</html>
