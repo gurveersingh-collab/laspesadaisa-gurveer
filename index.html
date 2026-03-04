@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -31,7 +30,7 @@ header{
 }
 
 .logo img{
-    width:40px;   
+    width:40px;
     height:auto;
 }
 
@@ -40,7 +39,7 @@ header{
     color:#000;
 }
 
-/* STELLE */
+/* MENU STELLE */
 .menu{
     display:flex;
     gap:20px;
@@ -51,16 +50,8 @@ header{
     height:110px;
     background:#1e8e3e;
     clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+        50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
     );
     display:flex;
     align-items:center;
@@ -72,7 +63,7 @@ header{
     padding:10px;
 }
 
-/* HERO */
+/* HERO SLIDER */
 .hero{
     width:90%;
     height:300px;
@@ -82,7 +73,6 @@ header{
     overflow:hidden;
 }
 
-/* SLIDER */
 .slider{
     position:relative;
     width:100%;
@@ -144,13 +134,13 @@ header{
     justify-content:center;
 }
 
-/* INFO */
+/* CHI SIAMO + CONTATTI BOX */
 .info{
     display:flex;
     width:90%;
     margin:40px auto;
-    border-top:3px solid black;
-    border-bottom:3px solid black;
+    border:3px solid black;
+    border-radius:20px;
     padding:40px 0;
 }
 
@@ -167,13 +157,23 @@ header{
     color:red;
 }
 
-/* ORARI SOTTO CONTATTI */
-.orari{
-    margin-top:30px;
+/* ORARI BOX SEPARATO */
+.orari-box{
+    width:90%;
+    margin:40px auto;
+    border:3px solid black;
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
 }
 
-.orari p{
-    margin:6px 0;
+.orari-box h3{
+    color:red;
+    margin-bottom:20px;
+}
+
+.orari-box p{
+    margin:8px 0;
 }
 
 </style>
@@ -226,6 +226,7 @@ header{
     </div>
 </section>
 
+<!-- CHI SIAMO + CONTATTI -->
 <section class="info">
     <div>
         <h3>CHI SIAMO</h3>
@@ -236,18 +237,19 @@ header{
         <h3>CONTATTI</h3>
         <p><strong>333 247 2741</strong></p>
         <p><strong>Address:</strong> Via della Tesa, 70, 25012 Viadana Bresciana BS</p>
-
-        <div class="orari">
-            <h3>ORARI DI APERTURA</h3>
-            <p><strong>MERCOLEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-            <p><strong>GIOVEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-            <p><strong>VENERDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-            <p><strong>SABATO:</strong> 07:30–12:30, 15:30–19:30</p>
-            <p><strong>LUNEDÌ:</strong> 07:30–12:30</p>
-            <p><strong>MARTEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-            <p><strong>DOMENICA:</strong> Chiuso</p>
-        </div>
     </div>
+</section>
+
+<!-- ORARI SEPARATI -->
+<section class="orari-box">
+    <h3>ORARI DI APERTURA</h3>
+    <p><strong>MERCOLEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
+    <p><strong>GIOVEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
+    <p><strong>VENERDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
+    <p><strong>SABATO:</strong> 07:30–12:30, 15:30–19:30</p>
+    <p><strong>LUNEDÌ:</strong> 07:30–12:30</p>
+    <p><strong>MARTEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
+    <p><strong>DOMENICA:</strong> Chiuso</p>
 </section>
 
 <script>
