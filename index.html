@@ -6,11 +6,11 @@
 
 <style>
 
-/* BODY */
+/* BODY con sfumato rosso */
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    background:#6fd48e;
+    background: linear-gradient(135deg, #b71c1c, #e53935, #ff8a80);
 }
 
 /* HEADER */
@@ -20,6 +20,7 @@ header{
     align-items:center;
     padding:20px 40px;
     border-bottom:3px solid black;
+    background:rgba(255,255,255,0.1);
 }
 
 /* LOGO */
@@ -36,7 +37,7 @@ header{
 
 .logo h1{
     font-size:32px;
-    color:#000;
+    color:white;
 }
 
 /* MENU STELLE */
@@ -63,7 +64,7 @@ header{
     padding:10px;
 }
 
-/* HERO SLIDER */
+/* HERO */
 .hero{
     width:90%;
     height:300px;
@@ -73,6 +74,7 @@ header{
     overflow:hidden;
 }
 
+/* SLIDER */
 .slider{
     position:relative;
     width:100%;
@@ -99,6 +101,7 @@ header{
     margin:40px auto;
     border:3px solid black;
     border-radius:20px;
+    background:white;
 }
 
 .box{
@@ -134,7 +137,7 @@ header{
     justify-content:center;
 }
 
-/* CHI SIAMO + CONTATTI BOX */
+/* CHI SIAMO + CONTATTI */
 .info{
     display:flex;
     width:90%;
@@ -142,6 +145,7 @@ header{
     border:3px solid black;
     border-radius:20px;
     padding:40px 0;
+    background:white;
 }
 
 .info div{
@@ -154,10 +158,10 @@ header{
 }
 
 .info h3{
-    color:red;
+    color:#e53935;
 }
 
-/* ORARI BOX SEPARATO */
+/* ORARI BOX */
 .orari-box{
     width:90%;
     margin:40px auto;
@@ -165,10 +169,11 @@ header{
     border-radius:20px;
     padding:40px;
     text-align:center;
+    background:white;
 }
 
 .orari-box h3{
-    color:red;
+    color:#e53935;
     margin-bottom:20px;
 }
 
@@ -226,7 +231,6 @@ header{
     </div>
 </section>
 
-<!-- CHI SIAMO + CONTATTI -->
 <section class="info">
     <div>
         <h3>CHI SIAMO</h3>
@@ -240,7 +244,6 @@ header{
     </div>
 </section>
 
-<!-- ORARI SEPARATI -->
 <section class="orari-box">
     <h3>ORARI DI APERTURA</h3>
 
@@ -268,7 +271,6 @@ setInterval(changeSlide, 3000);
 
 </body>
 </html>
-
 
 
 
