@@ -1,286 +1,203 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>La Spesa da Isa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTX Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<style>
-/* BODY con sfondo rosso sfumato animato */
-@keyframes gradientShift {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+    }
 
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #c62828, #ef5350, #ffcdd2);
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #000;
+      border-bottom: 2px solid #00ff66;
+    }
 
-/* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    border-bottom:3px solid black;
-    background:rgba(255,255,255,0.1);
-}
+    header h1 {
+      color: #00ff66;
+      font-size: 28px;
+    }
 
-/* LOGO */
-.logo{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #e5e5e5;
+      transition: 0.3s;
+    }
 
-.logo img{
-    width:40px;
-    height:auto;
-}
+    nav a:hover {
+      color: #00ff66;
+    }
 
-.logo h1{
-    font-size:32px;
-    color:white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #000, #0a0a0a);
+    }
 
-/* MENU STELLE */
-.menu{
-    display:flex;
-    gap:20px;
-}
+    .hero h2 {
+      font-size: 48px;
+      color: #00ff66;
+      margin-bottom: 20px;
+    }
 
-.stella{
-    width:110px;
-    height:110px;
-    background:#1e8e3e;
-    clip-path: polygon(
-        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
-        50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
-    );
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    font-weight:bold;
-    font-size:13px;
-    padding:10px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
 
-/* HERO */
-.hero{
-    width:90%;
-    height:300px;
-    margin:30px auto;
-    border:3px solid black;
-    border-radius:20px;
-    overflow:hidden;
-}
+    .btn {
+      padding: 12px 25px;
+      background-color: #00ff66;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-/* SLIDER */
-.slider{
-    position:relative;
-    width:100%;
-    height:100%;
-}
+    .btn:hover {
+      background-color: #00cc55;
+    }
 
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0;
-    transition:opacity 1s ease-in-out;
-}
+    .products {
+      padding: 60px 40px;
+    }
 
-.slide.active{
-    opacity:1;
-}
+    .products h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00ff66;
+      font-size: 32px;
+    }
 
-/* PRODOTTI / SERVIZI */
-.container{
-    display:flex;
-    width:90%;
-    margin:40px auto;
-    border:3px solid black;
-    border-radius:20px;
-    background:white;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-.box{
-    flex:1;
-    padding:30px;
-}
+    .card {
+      background-color: #111;
+      padding: 20px;
+      border: 1px solid #00ff66;
+      transition: 0.3s;
+    }
 
-.box:first-child{
-    border-right:3px solid black;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00ff66;
+    }
 
-.box h2{
-    text-align:center;
-    margin-bottom:30px;
-}
+    .card img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
 
-.btn{
-    padding:15px 20px;
-    border-radius:20px;
-    text-align:center;
-    color:white;
-    font-weight:bold;
-    margin:10px;
-}
+    .card h4 {
+      color: #00ff66;
+      margin-bottom: 10px;
+    }
 
-.verde{ background:#1e8e3e; }
-.rosso{ background:#e53935; }
+    .card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
 
-.bottoni-verdi,
-.bottoni-rossi{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
+    .price {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
 
-/* CHI SIAMO + CONTATTI */
-.info{
-    display:flex;
-    width:90%;
-    margin:40px auto;
-    border:3px solid black;
-    border-radius:20px;
-    padding:40px 0;
-    background:white;
-}
-
-.info div{
-    flex:1;
-    padding:20px;
-}
-
-.info div:first-child{
-    border-right:3px solid black;
-}
-
-.info h3{
-    color:#e53935;
-}
-
-/* ORARI BOX */
-.orari-box{
-    width:90%;
-    margin:40px auto;
-    border:3px solid black;
-    border-radius:20px;
-    padding:40px;
-    text-align:center;
-    background:white;
-}
-
-.orari-box h3{
-    color:#e53935;
-    margin-bottom:20px;
-}
-
-.orari-box p{
-    margin:8px 0;
-}
-
-</style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #00ff66;
+      background-color: #000;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">
-        <img src="136112763_104227068297134_3438713755018764637_n.jpg" alt="Logo">
-        <h1>LA SPESA DA ISA</h1>
-    </div>
-
-    <div class="menu">
-        <div class="stella">CHI SIAMO</div>
-        <div class="stella">PRODOTTI</div>
-        <div class="stella">MONEY</div>
-        <div class="stella">SERVIZI</div>
-    </div>
+  <h1>RTX POWER</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Prodotti</a>
+    <a href="#">Contatti</a>
+  </nav>
 </header>
 
-<div class="hero">
-    <div class="slider">
-        <img src="20260224_083514.jpg" class="slide active">
-        <img src="20260224_083553.jpg" class="slide">
-        <img src="20260224_083455.jpg" class="slide">
-    </div>
-</div>
-
-<section class="container">
-    <div class="box">
-        <h2>PRODOTTI</h2>
-        <div class="bottoni-verdi">
-            <div class="btn verde">ALIMENTARI</div>
-            <div class="btn verde">GASTRONOMIA</div>
-            <div class="btn verde">FRUTTA VERDURA</div>
-            <div class="btn verde">CASA</div>
-            <div class="btn verde">CANCELLERIA</div>
-        </div>
-    </div>
-
-    <div class="box">
-        <h2>SERVIZI</h2>
-        <div class="bottoni-rossi">
-            <div class="btn rosso">SPESA A DOMICILIO</div>
-            <div class="btn rosso">OFFERTE</div>
-            <div class="btn rosso">CARTA FEDELTA'</div>
-            <div class="btn rosso">MONEY</div>
-        </div>
-    </div>
+<section class="hero">
+  <h2>GEFORCE RTX</h2>
+  <p>Prestazioni estreme, ray tracing in tempo reale e AI avanzata. Porta il tuo gaming al livello successivo.</p>
+  <button class="btn">Scopri Ora</button>
 </section>
 
-<section class="info">
-    <div>
-        <h3>CHI SIAMO</h3>
-        <p>La Spesa da Isa è il mini market di quartiere dove qualità, convenienza e cortesia vanno sempre di pari passo.</p>
+<section class="products">
+  <h3>Le Nostre GPU</h3>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="RTX 4060">
+      <h4>RTX 4060</h4>
+      <p>Perfetta per il gaming in 1080p con ray tracing.</p>
+      <div class="price">€329</div>
+      <button class="btn">Compra</button>
     </div>
 
-    <div>
-        <h3>CONTATTI</h3>
-        <p><strong>333 247 2741</strong></p>
-        <p><strong>Address:</strong> Via della Tesa, 70, 25012 Viadana Bresciana BS</p>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="RTX 4070">
+      <h4>RTX 4070</h4>
+      <p>Prestazioni elevate per gaming 1440p e creatori.</p>
+      <div class="price">€599</div>
+      <button class="btn">Compra</button>
     </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="RTX 4080">
+      <h4>RTX 4080</h4>
+      <p>Esperienza 4K con potenza incredibile.</p>
+      <div class="price">€1199</div>
+      <button class="btn">Compra</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="RTX 4090">
+      <h4>RTX 4090</h4>
+      <p>La GPU definitiva per prestazioni senza compromessi.</p>
+      <div class="price">€1899</div>
+      <button class="btn">Compra</button>
+    </div>
+
+  </div>
 </section>
 
-<section class="orari-box">
-    <h3>ORARI DI APERTURA</h3>
-
-    <p><strong>LUNEDÌ:</strong> 07:30–12:30</p>
-    <p><strong>MARTEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-    <p><strong>MERCOLEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-    <p><strong>GIOVEDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-    <p><strong>VENERDÌ:</strong> 07:30–12:30, 15:30–19:30</p>
-    <p><strong>SABATO:</strong> 07:30–12:30, 15:30–19:30</p>
-    <p><strong>DOMENICA:</strong> Chiuso</p>
-</section>
-
-<script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function changeSlide(){
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-}
-
-setInterval(changeSlide, 3000);
-</script>
+<footer>
+  <p>© 2026 RTX Store - Tutti i diritti riservati</p>
+</footer>
 
 </body>
 </html>
-
 
 
 
